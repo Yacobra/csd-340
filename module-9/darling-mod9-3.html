@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jacob Darling">
+    <meta name="description" content="Web page exercise assignment for CSD 340 Development with HTML and CSS">
+    
+    <link rel="stylesheet" href="darling-mod9-3.css">
+    
+    <title>CSD 340 Development with HTML and CSS</title>
+    <script>
+        // Declare variables for the words
+        var word1 = "Darling";
+        var word2 = "California";
+        var word3 = "technology";
+        var word4 = "Disneyland";
+
+        // Function to replace the underscores in the specified span
+        function replaceWord(spanId, word) {
+            document.getElementById(spanId).innerText = word;
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Assignment 9.3 - JavaScript - Part 1</h1>
+        
+        <h2>Chapter Title: About Me</h2>
+        
+        <p class="intro">Hello, my name is Jacob <span id="word1" class="word-replace">______</span>. I am the youngest of three brothers and am currently studying to become a software developer. I was born and raised in Southern <span id="word2" class="word-replace">______</span> and could not imagine living anywhere else.</p>
+        
+        <p>I have always been intrigued by <span id="word3" class="word-replace">______</span> and how it has slowly seeped into every corner of our daily routines. I wanted to become part of this advancement, creating a better life for people everywhere. <span class="sentence">The future is what we make of it.</span></p>
+        
+        <p>As a child I was always a peformer. My last few years in high school was spent doing theater. This inspired me to apply and work at <span id="word4" class="word-replace">______</span>.</p>
+        
+        <p>I am furthering my education in hopes to find a career path that allows me to work mostly from home. Technology is is always advancing and I want to be part of that journey.</p>
+        
+
+          <button onclick="replaceWord('word1', word1)">Darling</button>
+          <button onclick="replaceWord('word2', word2)">California</button>
+          <button onclick="replaceWord('word3', word3)">technology</button>
+          <button onclick="replaceWord('word4', word4)">Disneyland</button>
+        
+        <hr />
+        
+        <address>
+            <a href="https://www.bellevue.edu">Bellevue University</a><br>
+            1000 Galvin Road South<br>
+            Bellevue, NE 68005<br>
+        </address>
+    </div>
+
+</body>
+</html>
