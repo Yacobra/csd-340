@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <script>
+        // Initialize the array to hold the entries
+        const entries = new Array();
+
+        // Function to add data to the array
+        function addEntry() {
+            const textBox = document.getElementById('entryInput');
+            const value = textBox.value;
+            if (value) {
+                entries.push(value);
+                alert(`Added: "${value}" at position ${entries.length}`);
+                textBox.value = ''; // Clear the input field
+            } else {
+                alert("Type to add something to your list!");
+            }
+        }
+
+        // Function to delete the last entry from the array
+        function deleteLastEntry() {
+            if (entries.length > 0) {
+                const removedEntry = entries.pop();
+                alert(`Deleted: "${removedEntry}"`);
+            } else {
+                alert("No entries to delete.");
+            }
+        }
+
+        // Function to display the contents of the array
+        function displayEntries() {
+            const displayArea = document.getElementById('displayArea');
+            displayArea.innerHTML = ''; // Clear previous entries
+            if (entries.length > 0) {
+                entries.forEach((entry, index) => {
+                    displayArea.innerHTML += `${index + 1}. ${entry}<br>`;
+                });
+            } else {
+                displayArea.innerHTML = 'No entries to display.';
+            }
+        }
+    </script>
+    
+    <link rel='stylesheet' type='text/css' href='darling-mod11-2.css' />
+</head>
+<body>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+    <p>This webpage allows you to build a simple To Do List. Add items one at a time by entering them into the textbox and clicking the Add button. The most recent entry can be deleted if necessary and when you have finished creating your list it can be Displayed.</p>
+    
+    <input type="text" id="entryInput" placeholder="Enter your entry here">
+    <button onclick="addEntry()">Add</button>
+    <button onclick="deleteLastEntry()">Delete Last Entry</button>
+    <button onclick="displayEntries()">Display</button>
+
+    <div id="displayArea" style="margin-top: 20px;"></div>
+</body>
+</html>
